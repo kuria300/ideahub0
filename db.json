@@ -1,0 +1,37 @@
+{
+  "ideas": [],
+  "users": [
+    {
+      "id": "b6a48595-fe45-4af2-bac2-2658a0afdb10",
+      "email": "eugenekuria66@gmail.com",
+      "name": "Eugene Kuria",
+      "picture": "https://lh3.googleusercontent.com/a/ACg8ocJ2UzhK8zlfLA02F1ig8mQ-l4qbHLSAZg4khHiXhlWqZYDVrA=s96-c",
+      "google": true
+    },
+    {
+      "id": "43efb93a-e1fc-480b-bace-9d90b777cdfa",
+      "email": "eugenekuria10193@gmail.com",
+      "password": "12345h"
+    },
+    {
+      "id": "025906e6-7177-419b-833a-e8aab235bea1",
+      "email": "eugenekuria1093@gmail.com",
+      "password": "12345h"
+    },
+    {
+      "id": "1a6239b3-8616-4b1c-8e3f-e98e78f7fd77",
+      "email": "eugenekuria1019@gmail.com",
+      "password": "12345h"
+    },
+    {
+      "id": "1d52c52a-ad90-4bc0-9537-7d18c491c489",
+      "email": "eugenekuria103@gmail.com",
+      "password": "12345h"
+    },
+    {
+      "id": "4e5dd63a-6e0c-475a-bb39-2b4b95999a43",
+      "email": "eugenekuria0193@gmail.com",
+      "password": "12345"
+    }
+  ]
+}
