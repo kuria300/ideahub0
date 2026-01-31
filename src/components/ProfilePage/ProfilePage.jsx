@@ -32,7 +32,7 @@ const ProfilePage = () => {
         .then(res => {if (!res.ok) throw new Error('Failed to add github URL') 
             return res.json()})
         .then((updatedUserData) => {
-            setUser({...user, updatedUserData})
+            setUser({...user, ...updatedUserData})
             setIsEditingGithub(false)
         })
         .catch(err => console.error("Failed to save GitHub link:", err))
