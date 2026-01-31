@@ -1,0 +1,87 @@
+.idea-card {
+  background-color: #2A2C34;
+  border: 1px solid #3A3C45;
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.idea-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Header */
+.idea-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.idea-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #E6E6E6;
+  margin: 0;
+}
+
+/* Description */
+.idea-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #A0A0A0;
+}
+
+/* Like Button */
+.like-button {
+  background: none;
+  border: none;
+  color: #A0A0A0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.like-button:hover {
+  color: #4AC1B6;
+  transform: scale(1.05);
+}
+
+.like-button.liked {
+  color: #3AB0A6;
+}
+
+/* Tags */
+.idea-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.idea-tag {
+  background-color: #1F2128;
+  color: #3AB0A6;
+  border: 1px solid #3A3C45;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+/* Footer */
+.idea-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.idea-author {
+  font-size: 0.8rem;
+  color: #7A7C85;
+}

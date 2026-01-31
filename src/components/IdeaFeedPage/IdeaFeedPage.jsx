@@ -5,6 +5,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import './IdeaFeedPage.css';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import Navbar from '../Navbar/Navbar';
 
 
 const IdeaFeedPage = () => {
@@ -13,6 +14,8 @@ const IdeaFeedPage = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const navigate = useNavigate();
 
+    const {id}= useParams()
+
     useEffect(() => {
         fetch('http://localhost:5000/ideas')
             .then(res => res.json())
@@ -20,8 +23,8 @@ const IdeaFeedPage = () => {
                 if (user) {
                     // Sort logic: If userId matches logged-in user, move to top
                     const sortedData = [...data].sort((a, b) => {
-                        if (a.userId === user.id && b.userId !== user.id) return -1;
-                        if (a.userId !== user.id && b.userId === user.id) return 1;
+                        if (a.userEmail === user.email && b.userEmail !== user.id) return -1;
+                        if (a.userEmail !== user.email && b.userEmail === user.id) return 1;
                         return 0;
                     });
                     setIdeas(sortedData);
@@ -31,6 +34,14 @@ const IdeaFeedPage = () => {
             })
             .catch(err => console.error("Error fetching feed:", err));
     }, [user]);
+
+    const handleSession=()=>{
+        if(!user){
+            toast.error("You need to login first")
+            return
+        }
+        navigate(`/addidea/${user.id}`)
+    }
 
     // Filter based on search bar input
     const filteredIdeas = ideas.filter(idea => {
@@ -42,19 +53,8 @@ const IdeaFeedPage = () => {
 
     return (
         <>
-        <header className="header-container">
-            <h1 className='nav-container'>
-                <ul>
-                    <li onClick={handleSession}>Create</li>
-                    {user?(<li onClick={Logout}>Logout</li>):(<li onClick={handleSession}>Login</li>)}
-                </ul>
-            </h1>
-        </header>
+        <Navbar id={id}/>
         <div className="feed-container">
-            <div className="feed-header">
-                <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-            </div>
-
             <div className="ideas-list">
                 {filteredIdeas.length > 0 ? 
                 (filteredIdeas.map(idea => (<IdeaCard key={idea.id} idea={idea} />))):
