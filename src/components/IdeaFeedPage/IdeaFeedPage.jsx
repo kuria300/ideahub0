@@ -7,9 +7,9 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 
 const IdeaFeedPage = () => {
-    const { user, Logout, setUser } = useAuthHook();
+    const { user} = useAuthHook();
     const [ideas, setIdeas] = useState([]);
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchTerm] = useState('');
     const navigate = useNavigate();
 
     const { id } = useParams();
