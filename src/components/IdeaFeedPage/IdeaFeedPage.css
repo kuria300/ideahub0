@@ -1,0 +1,46 @@
+.feed-container {
+    background-color: #1F2128; /* Main Background */
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feed-header {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.ideas-list {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between cards */
+}
+
+.no-results {
+    color: #7A7C85;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.1rem;
+}
+
+/* Global scrollbar styling for the dark theme */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #1F2128;
+}
+::-webkit-scrollbar-thumb {
+    background: #3A3C45;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #3AB0A6;
+}
