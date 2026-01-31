@@ -1,9 +1,15 @@
-import { Link } from 'react-router-dom';
-import './Navbar.css';
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
-const isLoggedIn = false;
 
 function Navbar() {
+  const handleProtectedClick = (e) => {
+    if (!isLoggedIn) {
+      e.preventDefault();
+      alert("Please log in first to access this page.");
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-left">
@@ -11,8 +17,16 @@ function Navbar() {
       </div>
 
       <ul className="navbar-links">
-        <li className="active"><Link to="/ideas">Ideas</Link></li>
-        <li><Link to="/add-idea">Add Idea</Link></li>
+        <li>
+          <Link to="/ideas" onClick={handleProtectedClick}>
+            Ideas
+          </Link>
+        </li>
+        <li>
+          <Link to="/add-idea" onClick={handleProtectedClick}>
+            Add Idea
+          </Link>
+        </li>
       </ul>
 
       <div className="navbar-right">
@@ -20,7 +34,9 @@ function Navbar() {
         {isLoggedIn ? (
           <span className="profile-placeholder">👤</span>
         ) : (
-          <Link className="login-text" to="/login">Login</Link>
+          <Link className="login-text" to="/login">
+            Login
+          </Link>
         )}
       </div>
     </nav>
