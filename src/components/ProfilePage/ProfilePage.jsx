@@ -4,7 +4,7 @@ import IdeaCard from '../IdeaCard/IdeaCard';
 import './ProfilePage.css';
 
 const ProfilePage = () => {
-    const { user } = useAuthHook();
+    const { user, setUser } = useAuthHook();
     const [myIdeas, setMyIdeas] = useState([]);
 
     useEffect(() => {

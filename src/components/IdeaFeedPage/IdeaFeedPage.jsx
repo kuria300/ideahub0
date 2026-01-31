@@ -3,22 +3,25 @@ import { useAuthHook } from '../../context/Contextdata';
 import IdeaCard from '../IdeaCard/IdeaCard';
 import SearchBar from '../SearchBar/SearchBar';
 import './IdeaFeedPage.css';
+import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 const IdeaFeedPage = () => {
-    const { user } = useAuthHook();
+    const { user, Logout, setUser } = useAuthHook();
     const [ideas, setIdeas] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('http://localhost:5000/ideas')
             .then(res => res.json())
             .then(data => {
                 if (user) {
-                    // Sort logic: If userEmail matches logged-in user, move to top
+                    // Sort logic: If userId matches logged-in user, move to top
                     const sortedData = [...data].sort((a, b) => {
-                        if (a.userEmail === user.email && b.userEmail !== user.email) return -1;
-                        if (a.userEmail !== user.email && b.userEmail === user.email) return 1;
+                        if (a.userId === user.id && b.userId !== user.id) return -1;
+                        if (a.userId !== user.id && b.userId === user.id) return 1;
                         return 0;
                     });
                     setIdeas(sortedData);
