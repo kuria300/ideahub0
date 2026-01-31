@@ -109,7 +109,7 @@ const Logout=()=>{
 }
 
   return (
-    <AuthContext.Provider value={{user, googleLogin, handleLogin, Logout, errors}}>
+    <AuthContext.Provider value={{user, googleLogin, handleLogin, Logout, errors, setUser}}>
      {children}
     </AuthContext.Provider>
   )
