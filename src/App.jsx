@@ -1,16 +1,27 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import './App.css'
-import Navbar from './components/Navbar/Navbar';
+import { useAuthHook } from './context/Contextdata';
+import IdeaFeedPage from './components/IdeaFeedPage/IdeaFeedPage';
 import Login from './components/login/Login';
+import ProfilePage from './components/ProfilePage/ProfilePage'
+import Addidea from './components/addIdeaForm/AddIdea';
+
 
 
 function App() {
-
+const {user}= useAuthHook()
   return (
-     <div>
-      <Navbar />
-      <Login />
-    </div>
+     <>
+     
+     <Routes>
+       <Route path='/' element={<IdeaFeedPage />}/>
+       <Route path='/:id' element={<IdeaFeedPage />}/>
+       <Route path='/login' element={<Login />}/>
+       <Route path='/profile/:id' element={user ? <ProfilePage /> : <Navigate to='/' />}/>
+       <Route path='/addidea/:id' element={user ? <Addidea />: <Navigate to='/' />}/>
+     </Routes>
+
+     </>
   );
 }
 
