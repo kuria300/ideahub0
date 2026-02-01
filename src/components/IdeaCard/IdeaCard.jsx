@@ -2,7 +2,7 @@ import React from 'react';
 import './IdeaCard.css';
 
 const IdeaCard = ({ idea }) => {
-    const { title, description, githubLink, userEmail, createdAt } = idea;
+    const { title, description, githubLink, createdAt } = idea;
 
     return (
         <div className="idea-card">
@@ -23,17 +23,13 @@ const IdeaCard = ({ idea }) => {
                 </a>
             )}
 
-            <div className="idea-footer">
-                <span className="idea-author">
-                    {userEmail}
-                </span>
-
-                {createdAt && (
+            {createdAt && (
+                <div className="idea-footer">
                     <span className="idea-date">
                         {new Date(createdAt).toLocaleDateString()}
                     </span>
-                )}
-            </div>
+                </div>
+            )}
         </div>
     );
 };
