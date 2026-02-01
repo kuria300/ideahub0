@@ -1,7 +1,7 @@
 import { useAuthHook } from '../../context/Contextdata';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import SearchBar from '../SearchBar';
+import SearchBar from "../SearchBar/SearchBar";
 import './Navbar.css';
 
 const Navbar = ({ id, searchTerm, setSearchTerm }) => {
