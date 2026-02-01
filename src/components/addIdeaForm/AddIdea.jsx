@@ -13,6 +13,15 @@ function Addidea() {
  
   const { id } = useParams();
 
+  const isValidURL = (url) => {
+  try {
+    new URL(url);
+    return true;
+  } catch {
+    return false;
+  }
+}; 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
  
