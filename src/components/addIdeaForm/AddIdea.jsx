@@ -1,23 +1,33 @@
 import { useState } from "react";
 import "./AddIdea.css";
 
-function Addidea() {
+function AddIdea({ userId, onNewIdea }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (!title || !description) {
+      setError("Please fill out all fields");
+      return;
+    }
+
     const newIdea = {
+      id: userId || "test",
       title,
       description,
       createdAt: new Date().toISOString(),
     };
 
-    console.log("Submitted idea:", newIdea);
+    console.log(newIdea);
+
+    if (onNewIdea) onNewIdea(newIdea);
 
     setTitle("");
     setDescription("");
+    setError("");
   };
 
   return (
@@ -37,10 +47,11 @@ function Addidea() {
           onChange={(e) => setDescription(e.target.value)}
           required
         />
+        {error && <p className="error-text">{error}</p>}
         <button type="submit">Submit Idea</button>
       </form>
     </div>
   );
 }
 
-export default Addidea;
+export default AddIdea;
