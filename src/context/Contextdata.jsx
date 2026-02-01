@@ -10,7 +10,7 @@ const AuthContext= createContext(null)
 const Contextdata = ({children}) => {
 const [user, setUser]=useState(null)
 const[errors, setError]=useState('')
-//const navigate= useNavigate()
+const navigate= useNavigate()
 
 //Goggle Login
 const googleLogin= useGoogleLogin({
@@ -49,8 +49,8 @@ const googleLogin= useGoogleLogin({
         setUser(loggedUser)
 
         toast.success('Login successful')
-        //navigate('/')
         setError('')
+        navigate(`/${loggedUser.id}`)
         }catch(err){
           setError(`Google login failed ${err}`)
         } 
@@ -96,7 +96,7 @@ const googleLogin= useGoogleLogin({
        setUser(normalUser)
         toast.success('Login successful')
         setError('')
-        //navigate('/')
+        navigate(`/${normalUser.id}`)
 
       }catch(err){
         console.log('Login failed', err)
@@ -105,7 +105,6 @@ const googleLogin= useGoogleLogin({
 
 const Logout=()=>{
     setUser(null)
-     //navigate('/login')
 }
 
   return (
