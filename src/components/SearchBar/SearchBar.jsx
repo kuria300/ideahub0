@@ -3,6 +3,7 @@ import './SearchBar.css';
 
 const SearchBar = ({ searchTerm, setSearchTerm }) => {
     return (
+        <div className="search-bar">
         <input
             type="text"
             className="search-bar"
@@ -10,6 +11,7 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
         />
+       </div> 
     );
 };
 
