@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthHook } from '../../context/Contextdata';
 import IdeaCard from '../IdeaCard';
+import SearchBar from '../SearchBar';
 import './IdeaFeedPage.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
