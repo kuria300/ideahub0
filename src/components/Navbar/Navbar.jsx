@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useAuthHook } from '../../context/Contextdata';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -26,40 +25,33 @@ const Navbar = ({ id, searchTerm, setSearchTerm }) => {
   };
 
   return (
-    <header className='header-container'>
-      <h1 className='nav-heading'>
+    <header className="header-container">
+      <h1 className="nav-heading">
         <span style={{ color: '#3AB0A6' }}>O</span>rigin
       </h1>
 
-      <nav className='nav-container'>
+      <nav className="nav-container">
         <ul>
           <li onClick={handleSession}>Create</li>
           {user ? (
             <li onClick={Logout}>Logout</li>
           ) : (
             <li>
-              <Link to='/login'>Login</Link>
+              <Link to="/login">Login</Link>
             </li>
           )}
         </ul>
       </nav>
 
-      <div className='feed-header'>
+      <div className="search-wrapper">
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       </div>
 
-      <div>
+      <div className="profile-wrapper" onClick={handleProfile}>
         {user?.picture ? (
-          <img
-            src={user.picture}
-            alt={user.name}
-            onClick={handleProfile}
-            className='profile-img'
-          />
+          <img src={user.picture} alt={user.name} className="profile-img" />
         ) : (
-          <div className='profile-placeholder' onClick={handleProfile}>
-            No Image
-          </div>
+          <div className="profile-placeholder">No Image</div>
         )}
       </div>
     </header>
