@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuthHook } from '../../context/Contextdata';
-import IdeaCard from '../IdeaCard';
+import IdeaCard from '../IdeaCard/IdeaCard';
 import './ProfilePage.css';
 
 const ProfilePage = () => {
