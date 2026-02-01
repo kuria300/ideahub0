@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./AddIdea.css";
+import "./addIdea.css";
 
 function AddIdea({ userId, onNewIdea }) {
   const [title, setTitle] = useState("");
