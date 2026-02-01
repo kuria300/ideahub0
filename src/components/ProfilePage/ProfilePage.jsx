@@ -12,19 +12,24 @@ const ProfilePage = () => {
     useEffect(() => {
         if (user) {
             setGithubLink(user.github || '')
-            fetch('http://localhost:5000/ideas')
+            fetch('http://localhost:4000/ideas')
                 .then(res => res.json())
                 .then(data => {
                     // Filter ideas using user's id
-                    const filtered = data.filter(idea => idea.userId === user.id)
+                    const filtered = data.filter(idea => idea.id === user.id)
                     setMyIdeas(filtered)
+
+                    const github= filtered.find((link)=> link.githubLink)
+             
+                      setGithubLink(github?.githubLink)
+                    
                 })
                 .catch(err => console.error("Error fetching ideas:", err, "🦖"))
         }
     }, [user]);
     // Function to save GitHub link to the database
     const handleSaveGithub = () => {
-        fetch(`http://localhost:5000/users/${user.id}`, {
+        fetch(`http://localhost:4000/users/${user.id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ github: githubLink })
@@ -32,11 +37,15 @@ const ProfilePage = () => {
         .then(res => {if (!res.ok) throw new Error('Failed to add github URL') 
             return res.json()})
         .then((updatedUserData) => {
-            setUser({...user, ...updatedUserData})
+            setUser(prev=>({...prev, ...updatedUserData}))
             setIsEditingGithub(false)
         })
         .catch(err => console.error("Failed to save GitHub link:", err))
     };
+
+    // if (!user) {
+    //     return <div className="profile-container"><p>Please, Just login to view your profile.</p></div>;//what shows on the profile page before logging in
+    // }
 
     return (
         <div className="profile-container">
@@ -50,7 +59,12 @@ const ProfilePage = () => {
                     
                     {/* github input section */}
                     <div className="github-section">
-                        {isEditingGithub ? (
+                    {githubLink ? (
+                       <div>
+                        <a href={githubLink}>GitHub Link</a>
+                       </div>
+                    ):(
+                       isEditingGithub ? (
                             <div className="github-input-group">
                                 <input 
                                     type="text" 
@@ -70,12 +84,15 @@ const ProfilePage = () => {
                                 ) : (
                                     <span className="no-github">No GitHub linked</span>
                                 )}
-
+                                <button onClick={() => setIsEditingGithub(true)} className="mini-edit-btn">
+                                    {user.github ? 'Edit' : 'Add GitHub'}
+                                </button>
                             </div>
-                        )}
+                        )
+                    )}
                     </div>
 
-                    <button className="edit-btn">Edit Profile</button>{/*Incomplete for now*/}
+                    
                 </div>
             </header>
 
