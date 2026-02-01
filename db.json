@@ -7,6 +7,14 @@
       "githubLink": "https://github.com/kuria300",
       "author": "halima",
       "createdAt": "2026-02-01T17:18:21.158Z"
+    },
+    {
+      "id": "df7fe245-1935-4a9a-b9dd-2b0db2774361",
+      "title": "Apocalyptic",
+      "description": "A siolo for the end",
+      "githubLink": "https://github.com/jorj-ma",
+      "author": "Faith and George",
+      "createdAt": "2026-02-01T22:19:28.923Z"
     }
   ],
   "users": [
@@ -53,6 +61,13 @@
       "id": "e2935194-3fe0-4310-8bed-bf8f44c34ca6",
       "email": "nur4hus@gmail.com",
       "password": "Rahanur#06"
+    },
+    {
+      "id": "df7fe245-1935-4a9a-b9dd-2b0db2774361",
+      "email": "anziegeorge4@gmail.com",
+      "name": "George Mwanzy",
+      "picture": "https://lh3.googleusercontent.com/a/ACg8ocJiXkA4w3Oyd91IZOdoqOraME52WGVTEeEOpLamMIEzdwm2BwE=s96-c",
+      "google": true
     }
   ]
 }
