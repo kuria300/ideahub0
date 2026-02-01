@@ -14,14 +14,15 @@
 }
 
 .nav-links {
-  list-style: none;
+  list-style-type: none;
   display: flex;
   gap: 24px;
 }
 
-.nav-links a {
+.nav-links li a{
   color: #a0a0a0;
   text-decoration: none;
+  
 }
 
 .nav-links a:hover {

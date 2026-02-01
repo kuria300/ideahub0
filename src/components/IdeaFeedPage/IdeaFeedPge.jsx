@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../Navbar/Navbar';
 import { useAuthHook } from '../../context/Contextdata';
-import IdeaCard from '../IdeaCard/IdeaCard';
 import SearchBar from '../SearchBar/SearchBar';
 import './IdeaFeedPage.css';
 
@@ -35,6 +35,8 @@ const IdeaFeedPage = () => {
     );
 
     return (
+        <>
+        <Navbar /> 
         <div className="feed-container">
             <div className="feed-header">
                 <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
@@ -47,6 +49,7 @@ const IdeaFeedPage = () => {
                 }
             </div>
         </div>
+        </>
     );
 };
 

@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { useAuthHook } from "../../context/Contextdata";
+
 
 
 function Navbar() {
+  const {user, Logout} = useAuthHook()
   const handleProtectedClick = (e) => {
-    if (!isLoggedIn) {
+    if (!user) {
       e.preventDefault();
       alert("Please log in first to access this page.");
+      return 
     }
+    
   };
 
   return (
@@ -18,11 +23,6 @@ function Navbar() {
 
       <ul className="navbar-links">
         <li>
-          <Link to="/ideas" onClick={handleProtectedClick}>
-            Ideas
-          </Link>
-        </li>
-        <li>
           <Link to="/add-idea" onClick={handleProtectedClick}>
             Add Idea
           </Link>
@@ -31,13 +31,7 @@ function Navbar() {
 
       <div className="navbar-right">
         <button className="search-btn">🔍</button>
-        {isLoggedIn ? (
-          <span className="profile-placeholder">👤</span>
-        ) : (
-          <Link className="login-text" to="/login">
-            Login
-          </Link>
-        )}
+        {user ? (<li onClick={Logout}>Logout</li>):(<li><Link to='/login'>Login</Link></li>)} 
       </div>
     </nav>
   );
