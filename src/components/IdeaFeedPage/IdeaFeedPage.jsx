@@ -8,7 +8,7 @@ import Navbar from '../Navbar/Navbar';
 const IdeaFeedPage = () => {
     const { user} = useAuthHook();
     const [ideas, setIdeas] = useState([]);
-    const [searchTerm] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
     const navigate = useNavigate();
 
     const { id } = useParams();
@@ -46,7 +46,7 @@ const IdeaFeedPage = () => {
 
     return (
         <>
-        <Navbar id={id} searchTerm={searchTerm}/>
+        <Navbar id={id} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
             <div className="feed-container">
                 <div className="ideas-list">
                     {filteredIdeas.length > 0 ? (
