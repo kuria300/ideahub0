@@ -12,7 +12,7 @@ const ProfilePage = () => {
     useEffect(() => {
         if (user) {
             setGithubLink(user.github || '')
-            fetch('http://localhost:4000/ideas')
+            fetch('http://localhost:5000/ideas')
                 .then(res => res.json())
                 .then(data => {
                     // Filter ideas using user's id
@@ -29,7 +29,7 @@ const ProfilePage = () => {
     }, [user]);
     // Function to save GitHub link to the database
     const handleSaveGithub = () => {
-        fetch(`http://localhost:4000/users/${user.id}`, {
+        fetch(`http://localhost:5000/users/${user.id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ github: githubLink })

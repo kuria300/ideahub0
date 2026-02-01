@@ -12,7 +12,7 @@ const IdeaCard = ({ idea, onLike }) => {
           onClick={() => onLike?.(idea.id)}
           aria-label="Like idea"
         >
-          <FaHeart />
+          {/* <FaHeart /> */}
           <span>{idea.likes}</span>
         </button>
       </div>

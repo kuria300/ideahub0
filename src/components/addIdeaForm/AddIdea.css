@@ -1,0 +1,66 @@
+body {
+  background-color: #1A1C23;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+.addidea-card {
+  background-color: #2A2C34;
+  color: #E6E6E6;
+  width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.addidea-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.addidea-card h2 {
+  margin: 0;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.addidea-card input,
+.addidea-card textarea,
+.addidea-card button {
+  width: 100%;
+  padding: 12px; 
+  border-radius: 8px;
+  border: 1px solid #3AB0A6;
+  background-color: #2F3139;
+  color: #E6E6E6;
+  box-sizing: border-box; 
+}
+
+.addidea-card textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.addidea-card input::placeholder,
+.addidea-card textarea::placeholder {
+  color: #7A7C85;
+}
+
+.addidea-card button {
+  background-color: #3AB0A6;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 10px;
+}
+
+.addidea-card button:hover {
+  background-color: #4AC1B6;
+}
