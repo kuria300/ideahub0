@@ -1,12 +1,20 @@
 {
   "ideas": [
     {
-      "id": "3f0308e4-1f36-40ea-bbce-9bb590c6c654",
-      "title": "blahh",
-      "description": "its something",
+      "id": "b6a48595-fe45-4af2-bac2-2658a0afdb10",
+      "title": "AI Powered system",
+      "description": "The system gets data from the university census and uses",
       "githubLink": "https://github.com/kuria300",
-      "author": "halima",
-      "createdAt": "2026-02-01T17:18:21.158Z"
+      "author": "Eugene Maina",
+      "createdAt": "2026-02-01T21:50:40.597Z"
+    },
+    {
+      "id": "43efb93a-e1fc-480b-bace-9d90b777cdfa",
+      "title": "Fee management system",
+      "description": "manages fee in university",
+      "githubLink": "https://github.com/owendo",
+      "author": "Halima",
+      "createdAt": "2026-02-01T22:04:33.961Z"
     }
   ],
   "users": [
@@ -41,18 +49,6 @@
       "id": "4e5dd63a-6e0c-475a-bb39-2b4b95999a43",
       "email": "eugenekuria0193@gmail.com",
       "password": "12345"
-    },
-    {
-      "id": "3f0308e4-1f36-40ea-bbce-9bb590c6c654",
-      "email": "h4limaabdi@gmail.com",
-      "name": "Halima Abdiaziz",
-      "picture": "https://lh3.googleusercontent.com/a/ACg8ocI67dESz_4Sa6tCfS_vxoq3RRRJMtcLGr-Yso99vrH5Ky8kAA=s96-c",
-      "google": true
-    },
-    {
-      "id": "e2935194-3fe0-4310-8bed-bf8f44c34ca6",
-      "email": "nur4hus@gmail.com",
-      "password": "Rahanur#06"
     }
   ]
 }
