@@ -35,5 +35,3 @@ const IdeaCard = ({ idea }) => {
 };
 
 export default IdeaCard;
-
-
